@@ -16,17 +16,16 @@ For manual testing the application, run the following command :
 
 ### Manual launch (Future bash script)
 
+#### Volume
+
 Build the shared volume :
     
     docker volume create --name common_volume --opt type=none --opt device=/home/ubuntu/train_Docker_lite_demo/volume --opt o=bind
 
-<!-- docker volume create --driver local \
-    --opt type=nfs \
-    --opt o=addr=192.168.1.1,rw \
-    --opt device=:/path/to/dir \
-    foo -->
-    
+#### Network
+https://www.tutorialworks.com/container-networking/
 
+#### Images
 Get the docker API image
     
     docker image pull datascientest/fastapi:1.0.0
@@ -35,7 +34,7 @@ Build an authentification image from an dockerfile :
 
     docker image build ./authentification -t test_authentification:latest
 
-
+#### Containers
 Run containers from images :
 
     API container
@@ -67,4 +66,4 @@ Remove all containers :
 
 OPTIMZATIONS !!!!
 
-Read the contente of a docker image
+Read the content of a docker image
