@@ -10,3 +10,61 @@ For manual testing the application, run the following command :
 
     docker container run -p 8000:8000 datascientest/fastapi:1.0.0
 
+
+
+## Notes :
+
+### Manual launch (Future bash script)
+
+Build the shared volume :
+    
+    docker volume create --name common_volume --opt type=none --opt device=/home/ubuntu/train_Docker_lite_demo/volume --opt o=bind
+
+<!-- docker volume create --driver local \
+    --opt type=nfs \
+    --opt o=addr=192.168.1.1,rw \
+    --opt device=:/path/to/dir \
+    foo -->
+    
+
+Get the docker API image
+    
+    docker image pull datascientest/fastapi:1.0.0
+
+Build an authentification image from an dockerfile : 
+
+    docker image build ./authentification -t test_authentification:latest
+
+
+Run containers from images :
+
+    API container
+    
+        docker container run -d -it -p 8000:8000 --name test_api datascientest/fastapi:1.0.0 
+        <!-- docker container run -d -it -p 8000:8000 --name test_api datascientest/fastapi:1.0.0 http://test_api:8000 -> nok -->
+
+        Container address : http://172.17.0.2
+
+    Authentification test container
+    
+        In detach mode
+        docker run -d --name test_authentification --mount source=common_volume,target=/app/logs -e "LOG=1" test_authentification:latest
+
+        With interactive
+        docker run -d -it --name test_authentification --mount source=common_volume,target=/app/logs -e "LOG=1" test_authentification:latest
+
+### Tips
+
+Remove all images :
+
+    docker rmi $(docker images -a -q)
+
+Remove all containers :
+
+    docker rm -f $(docker ps -a -q)
+
+
+
+OPTIMZATIONS !!!!
+
+Read the contente of a docker image
