@@ -95,8 +95,14 @@ Run containers from images :
 &nbsp;&nbsp;Run container in the custom bridge network with interactive mode and detach
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`docker run -d -it --name test_authentification --net=lite_demo-net --mount source=common_volume,target=/app/logs -e "LOG=1" test_authentification:latest`
-        
-### Tips
+
+## Script launch
+
+To launch the application, run setup.sh.
+
+It will configure the network, the common volume and download/build containers images. Then the containers will run and log to `./volume`
+
+## Tips
 
 Remove all images :
 
@@ -113,9 +119,3 @@ List all networks :
 Restart a container
 
     docker container restart [OPTIONS] CONTAINER [CONTAINER...]
-
-### OPTIMZATIONS !!!
-
-Up the doc
-
-
