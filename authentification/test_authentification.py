@@ -21,15 +21,6 @@ today = datetime.now()
 
 # ================================================          Functions / Class          ================================================
 
-# définition de l'adresse de l'API
-api_address = '172.17.0.2'
-# port de l'API
-api_port = 8000
-# node definition
-api_node = "/permissions"
-
-test_name = "Authentication test"
-
 def auth_request (api_address,api_port,api_node,test_name,username,password,exp_status_code,output,date):
     """_summary_
     
@@ -92,7 +83,7 @@ def auth_request (api_address,api_port,api_node,test_name,username,password,exp_
 # ===================== Configuration
 
 # définition de l'adresse de l'API
-api_address = '172.17.0.2'
+api_address = 'test_api'
 # port de l'API
 api_port = 8000
 # node definition
