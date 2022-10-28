@@ -119,9 +119,3 @@ List all networks :
 Restart a container
 
     docker container restart [OPTIONS] CONTAINER [CONTAINER...]
-
-## OPTIMZATIONS !!!
-
-Up the doc  
-
-curl -X 'GET' 'http://localhost:8000/status'
