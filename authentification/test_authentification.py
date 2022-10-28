@@ -54,7 +54,7 @@ def auth_request (api_address,api_port,api_node,test_name,username,password,exp_
          
     except:
         test_status = 'FAILURE'
-        status_code == 503
+        status_code = 503
 
     # Formating output
     output = output.format(test_name = test_name,
