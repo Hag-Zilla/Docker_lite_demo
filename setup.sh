@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ========================== Mount the common volume
-docker volume create --name common_volume --opt type=none --opt device=/home/ubuntu/train_Docker_lite_demo/volume --opt o=bind
+docker volume create --name common_volume --opt type=none --opt device=/home/ubuntu/Docker_lite_demo/volume --opt o=bind
 
 # ========================== Images 
 
