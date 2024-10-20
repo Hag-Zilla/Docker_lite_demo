@@ -1,4 +1,4 @@
-# train_Docker_lite_demo
+# Docker_lite_demo
 
 ## Current state of this demo
 
